@@ -14,6 +14,7 @@ type IconComponent = ComponentType<SVGProps<SVGSVGElement>>
 
 type AppLink = {
   title: string
+  teaser: string
   description: string
   href: string
   label: string
@@ -21,6 +22,9 @@ type AppLink = {
   iconClassName: string
   iconWrapClassName: string
   chipClassName: string
+  panelClassName: string
+  accentClassName: string
+  buttonClassName: string
 }
 
 type Contact = {
@@ -33,6 +37,7 @@ type Contact = {
 const appLinks: AppLink[] = [
   {
     title: 'Laychu Translate',
+    teaser: 'Dịch thuật gọn, nhanh và rõ ràng.',
     description:
       'Dịch nhanh, gọn và dễ dùng cho những nhu cầu xử lý ngôn ngữ hằng ngày.',
     href: 'https://translate.laychu.com/',
@@ -41,9 +46,14 @@ const appLinks: AppLink[] = [
     iconClassName: 'text-teal-700',
     iconWrapClassName: 'bg-teal-100',
     chipClassName: 'bg-teal-50 text-teal-700',
+    panelClassName:
+      'bg-[linear-gradient(135deg,rgba(240,253,250,0.95),rgba(255,255,255,0.92))] border-teal-100/80',
+    accentClassName: 'from-teal-300/70 via-emerald-200/40 to-transparent',
+    buttonClassName: 'bg-teal-700 text-white',
   },
   {
     title: 'Ví Giấy Tờ',
+    teaser: 'Quản lý hồ sơ số theo cách nhẹ nhàng hơn.',
     description:
       'Không gian tập trung để quản lý giấy tờ số, truy cập hồ sơ và thao tác thuận tiện hơn.',
     href: 'https://vigiayto.laychu.com/',
@@ -52,9 +62,14 @@ const appLinks: AppLink[] = [
     iconClassName: 'text-amber-700',
     iconWrapClassName: 'bg-amber-100',
     chipClassName: 'bg-amber-50 text-amber-700',
+    panelClassName:
+      'bg-[linear-gradient(135deg,rgba(255,251,235,0.96),rgba(255,255,255,0.92))] border-amber-100/80',
+    accentClassName: 'from-amber-300/70 via-orange-200/40 to-transparent',
+    buttonClassName: 'bg-amber-600 text-white',
   },
   {
     title: 'SEMIT',
+    teaser: 'Điểm vào tập trung cho nền tảng làm việc nội bộ.',
     description:
       'Điểm truy cập riêng cho hệ thống SEMIT, phục vụ mở nhanh và làm việc trực tiếp trên nền tảng.',
     href: 'http://semit.laychu.com/',
@@ -63,6 +78,10 @@ const appLinks: AppLink[] = [
     iconClassName: 'text-sky-700',
     iconWrapClassName: 'bg-sky-100',
     chipClassName: 'bg-sky-50 text-sky-700',
+    panelClassName:
+      'bg-[linear-gradient(135deg,rgba(240,249,255,0.96),rgba(255,255,255,0.92))] border-sky-100/80',
+    accentClassName: 'from-sky-300/70 via-cyan-200/40 to-transparent',
+    buttonClassName: 'bg-sky-700 text-white',
   },
 ]
 
@@ -95,10 +114,10 @@ function App() {
           <div className="min-w-0 space-y-8 self-center">
             <div className="flex flex-wrap items-center gap-3">
               <Chip className="rounded-full bg-teal-50 text-teal-700" variant="soft">
-                Bộ sưu tập sản phẩm
+                namhnz apps
               </Chip>
               <Chip className="rounded-full bg-white/85 text-slate-600" variant="soft">
-                namhnz
+                03 sản phẩm đang hoạt động
               </Chip>
             </div>
 
@@ -110,19 +129,21 @@ function App() {
 
             <div className="space-y-5">
               <h1 className="max-w-4xl text-balance font-['Manrope'] text-5xl font-extrabold leading-[0.95] tracking-[-0.05em] text-slate-900 sm:text-6xl lg:text-[5.5rem]">
-                Tất cả ứng dụng của namhnz
+                Một landing page dành cho toàn bộ sản phẩm của namhnz
               </h1>
               <Text className="max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
-                Nơi giới thiệu các ứng dụng đang được xây dựng và vận hành bởi namhnz.
+                Từ dịch thuật, quản lý giấy tờ đến hệ thống làm việc nội bộ, mọi sản phẩm đều được đặt trong cùng một không gian gọn gàng và dễ nhớ.
               </Text>
             </div>
 
             <div className="flex flex-wrap gap-3">
               <Button
                 className="rounded-full bg-slate-900 text-white"
-                onPress={() => openExternal(appLinks[0]!.href)}
+                onPress={() => {
+                  document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })
+                }}
               >
-                Mở nhanh Translate
+                Xem sản phẩm
               </Button>
               <Button
                 className="rounded-full"
@@ -133,9 +154,23 @@ function App() {
               </Button>
             </div>
 
-            <Text className="max-w-xl text-sm leading-7 text-slate-500">
-              Một landing page tối giản để nhìn tổng quan các sản phẩm và mở nhanh khi cần.
-            </Text>
+            <div className="grid gap-3 sm:grid-cols-3">
+              {[
+                ['03', 'Sản phẩm'],
+                ['01', 'Không gian giới thiệu'],
+                ['namhnz', 'Tác giả'],
+              ].map(([value, label]) => (
+                <div
+                  key={label}
+                  className="rounded-[28px] border border-white/70 bg-white/72 px-5 py-4 shadow-lg shadow-slate-900/5"
+                >
+                  <p className="font-['Manrope'] text-2xl font-bold tracking-tight text-slate-900">
+                    {value}
+                  </p>
+                  <p className="mt-1 text-sm text-slate-500">{label}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
           <Card className="overflow-hidden border border-white/70 bg-[linear-gradient(180deg,_rgba(255,255,255,0.9),_rgba(248,250,252,0.82))] shadow-xl shadow-slate-900/8">
@@ -149,16 +184,24 @@ function App() {
                 />
               </div>
 
-              <div className="relative mt-5 grid gap-3 sm:grid-cols-3">
-                {appLinks.map(({ title, icon: Icon, iconClassName, iconWrapClassName }) => (
+              <div className="relative mt-5 grid gap-3">
+                {appLinks.map(({ title, label, icon: Icon, iconClassName, iconWrapClassName }) => (
                   <div
                     key={title}
-                    className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white/85 px-4 py-3 shadow-sm"
+                    className="flex items-center justify-between gap-3 rounded-[24px] border border-slate-200 bg-white/85 px-4 py-3 shadow-sm"
                   >
-                    <div className={`grid size-10 place-items-center rounded-2xl ${iconWrapClassName}`}>
-                      <Icon className={`size-5 ${iconClassName}`} />
+                    <div className="flex items-center gap-3">
+                      <div
+                        className={`grid size-10 place-items-center rounded-2xl ${iconWrapClassName}`}
+                      >
+                        <Icon className={`size-5 ${iconClassName}`} />
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-slate-700">{title}</p>
+                        <p className="text-xs text-slate-500">{label}</p>
+                      </div>
                     </div>
-                    <p className="text-sm font-medium text-slate-700">{title}</p>
+                    <ArrowTopRightOnSquareIcon className="size-4 text-slate-400" />
                   </div>
                 ))}
               </div>
@@ -167,70 +210,83 @@ function App() {
         </section>
       </Surface>
 
-      <section className="space-y-6">
+      <section id="products" className="space-y-6">
         <div className="space-y-2">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">
-            Sản phẩm
+            Spotlight
           </p>
           <h2 className="font-['Manrope'] text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Những ứng dụng đang hoạt động
+            Bộ sản phẩm đang được giới thiệu
           </h2>
+          <Text className="max-w-2xl text-base leading-7 text-slate-600">
+            Mỗi sản phẩm có một vai trò riêng, nhưng cùng chung một tinh thần: rõ ràng, thực dụng và dễ dùng.
+          </Text>
         </div>
 
-        <section className="overflow-hidden rounded-[32px] border border-white/70 bg-white/55 shadow-xl shadow-slate-900/6 backdrop-blur-sm">
+        <section className="grid gap-5 lg:grid-cols-3">
           {appLinks.map(
-            (
-              {
-                title,
-                description,
-                href,
-                label,
-                icon: Icon,
-                iconClassName,
-                iconWrapClassName,
-                chipClassName,
-              },
-              index,
-            ) => (
+            ({
+              title,
+              teaser,
+              description,
+              href,
+              label,
+              icon: Icon,
+              iconClassName,
+              iconWrapClassName,
+              chipClassName,
+              panelClassName,
+              accentClassName,
+              buttonClassName,
+            }) => (
               <article
                 key={title}
-                className={`group grid gap-5 px-5 py-5 transition-colors duration-200 hover:bg-white/50 sm:px-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center lg:gap-6 lg:px-8 ${
-                  index !== appLinks.length - 1 ? 'border-b border-slate-200/80' : ''
-                }`}
+                className={`relative overflow-hidden rounded-[32px] border p-6 shadow-xl shadow-slate-900/7 ${panelClassName}`}
               >
-                <div className="flex min-w-0 gap-4">
-                  <div
-                    className={`grid size-14 shrink-0 place-items-center rounded-[20px] shadow-sm ${iconWrapClassName}`}
-                  >
-                    <Icon className={`size-7 ${iconClassName}`} />
+                <div
+                  className={`pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b ${accentClassName}`}
+                />
+
+                <div className="relative flex h-full flex-col gap-6">
+                  <div className="flex items-start justify-between gap-4">
+                    <div
+                      className={`grid size-14 place-items-center rounded-[20px] shadow-sm ${iconWrapClassName}`}
+                    >
+                      <Icon className={`size-7 ${iconClassName}`} />
+                    </div>
+                    <Chip className={`rounded-full ${chipClassName}`} variant="soft">
+                      {label}
+                    </Chip>
                   </div>
 
-                  <div className="min-w-0 space-y-3">
-                    <div className="flex flex-wrap items-center gap-3">
-                      <h3 className="font-['Manrope'] text-2xl font-bold tracking-tight text-slate-900">
-                        {title}
-                      </h3>
-                      <Chip className={`rounded-full ${chipClassName}`} variant="soft">
-                        {label}
-                      </Chip>
+                  <div className="space-y-3">
+                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
+                      {teaser}
+                    </p>
+                    <h3 className="font-['Manrope'] text-3xl font-bold leading-tight tracking-tight text-slate-900">
+                      {title}
+                    </h3>
+                    <Text className="text-sm leading-7 text-slate-600">{description}</Text>
+                  </div>
+
+                  <div className="mt-auto space-y-4">
+                    <div className="rounded-[24px] border border-white/70 bg-white/70 px-4 py-4">
+                      <p className="text-sm text-slate-500">Mở trực tiếp</p>
+                      <p className="mt-1 break-all font-medium text-slate-800">
+                        {href.replace(/^https?:\/\//, '')}
+                      </p>
                     </div>
 
-                    <Text className="max-w-2xl text-sm leading-7 text-slate-600">
-                      {description}
-                    </Text>
+                    <Button
+                      className={`w-full rounded-full ${buttonClassName}`}
+                      onPress={() => openExternal(href)}
+                    >
+                      <span className="inline-flex items-center gap-2">
+                        Khám phá sản phẩm
+                        <ArrowTopRightOnSquareIcon className="size-4" />
+                      </span>
+                    </Button>
                   </div>
-                </div>
-
-                <div className="flex items-center lg:justify-end">
-                  <Button
-                    className="rounded-full bg-slate-900 text-white"
-                    onPress={() => openExternal(href)}
-                  >
-                    <span className="inline-flex items-center gap-2">
-                      Khám phá sản phẩm
-                      <ArrowTopRightOnSquareIcon className="size-4" />
-                    </span>
-                  </Button>
                 </div>
               </article>
             ),
@@ -238,36 +294,40 @@ function App() {
         </section>
       </section>
 
+      <section className="rounded-[32px] border border-white/70 bg-[linear-gradient(135deg,rgba(15,23,42,0.96),rgba(30,41,59,0.94))] px-6 py-8 text-white shadow-2xl shadow-slate-900/15 sm:px-8 lg:flex lg:items-end lg:justify-between">
+        <div className="max-w-2xl space-y-3">
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-white/60">
+            Liên hệ
+          </p>
+          <h2 className="font-['Manrope'] text-3xl font-bold tracking-tight sm:text-4xl">
+            Muốn trao đổi về sản phẩm hoặc hợp tác cùng namhnz?
+          </h2>
+          <Text className="text-base leading-7 text-white/70">
+            Có thể bắt đầu nhanh qua Gmail hoặc Telegram.
+          </Text>
+        </div>
+
+        <div className="mt-6 flex flex-wrap gap-3 lg:mt-0 lg:justify-end">
+          {contacts.map(({ label, value, href, icon: Icon }) => (
+            <Button
+              key={label}
+              className="rounded-full bg-white text-slate-900"
+              onPress={() => openExternal(href)}
+            >
+              <span className="inline-flex items-center gap-2">
+                <Icon className="size-4" />
+                {value}
+              </span>
+            </Button>
+          ))}
+        </div>
+      </section>
+
       <footer className="border-t border-slate-200/80 px-1 pt-8 pb-4">
         <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
-          <div className="space-y-4">
-            <div className="space-y-2">
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">
-                Liên hệ
-              </p>
-              <h2 className="font-['Manrope'] text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
-                Kết nối với namhnz
-              </h2>
-            </div>
-
-            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              {contacts.map(({ label, value, href, icon: Icon }) => (
-                <button
-                  key={label}
-                  type="button"
-                  className="flex items-center gap-3 rounded-full border border-slate-200 bg-white/70 px-4 py-3 text-left transition-colors hover:bg-white"
-                  onClick={() => openExternal(href)}
-                >
-                  <div className="grid size-10 place-items-center rounded-full bg-slate-100 text-slate-700">
-                    <Icon className="size-5" />
-                  </div>
-                  <div className="min-w-0">
-                    <p className="text-sm font-semibold text-slate-900">{label}</p>
-                    <p className="break-all text-sm text-slate-500">{value}</p>
-                  </div>
-                </button>
-              ))}
-            </div>
+          <div className="space-y-2">
+            <p className="text-sm text-slate-500">Landing page giới thiệu sản phẩm của namhnz</p>
+            <p className="text-sm text-slate-500">laychu.com</p>
           </div>
 
           <div className="flex items-center gap-3 text-sm text-slate-500">
