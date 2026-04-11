@@ -33,6 +33,7 @@ npm run lint
 
 ## GitHub Pages
 
-- Repository Pages URL dự kiến: `https://ocampoje17.github.io/laychu-landing-page/`
+- Repository Pages URL hiện tại: `https://ocampoje17.github.io/laychu-landing-page/`
+- Nếu dùng custom domain như `laychu.com`, build hiện đã cấu hình theo root domain (`/`)
 - Workflow deploy tự động nằm tại `.github/workflows/deploy.yml`
 - Trong GitHub: vào `Settings` -> `Pages` -> chọn `Source` là `GitHub Actions`
