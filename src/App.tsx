@@ -5,6 +5,7 @@ import {
   ArrowTopRightOnSquareIcon,
   DocumentMagnifyingGlassIcon,
   EnvelopeIcon,
+  FolderOpenIcon,
   LanguageIcon,
   PaperAirplaneIcon,
   SparklesIcon,
@@ -41,6 +42,15 @@ function App() {
       label: 'Hồ sơ số',
       accent: 'amber',
       icon: DocumentMagnifyingGlassIcon,
+    },
+    {
+      title: 'SEMIT',
+      description:
+        'Điểm truy cập riêng cho hệ thống SEMIT, phục vụ mở nhanh và làm việc trực tiếp trên nền tảng.',
+      href: 'http://semit.laychu.com/',
+      label: 'Hệ thống nội bộ',
+      accent: 'sky',
+      icon: FolderOpenIcon,
     },
   ]
 
@@ -112,7 +122,7 @@ function App() {
 
             <div className="hero-meta">
               <div className="hero-stat">
-                <strong>02</strong>
+                <strong>03</strong>
                 <span>ứng dụng đang mở cho người dùng</span>
               </div>
               <div className="hero-stat">

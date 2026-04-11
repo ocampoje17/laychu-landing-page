@@ -322,7 +322,7 @@ h1 {
 
 .apps-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
   min-width: 0;
 }
@@ -355,7 +355,8 @@ h1 {
 }
 
 .app-card-teal::after,
-.app-card-amber::after {
+.app-card-amber::after,
+.app-card-sky::after {
   content: '';
   position: absolute;
   inset: auto auto 10% -10%;
@@ -373,6 +374,10 @@ h1 {
 
 .app-card-amber::after {
   background: radial-gradient(circle, rgba(255, 179, 71, 0.46), transparent 70%);
+}
+
+.app-card-sky::after {
+  background: radial-gradient(circle, rgba(84, 134, 255, 0.4), transparent 70%);
 }
 
 .app-card-head,
