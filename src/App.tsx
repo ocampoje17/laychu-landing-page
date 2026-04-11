@@ -23,11 +23,16 @@ type AppLink = {
   href: string
   label: string
   icon: IconComponent
-  iconClassName: string
-  iconWrapClassName: string
-  chipClassName: string
-  panelClassName: string
-  accentClassName: string
+  lightIconClassName: string
+  darkIconClassName: string
+  lightIconWrapClassName: string
+  darkIconWrapClassName: string
+  lightChipClassName: string
+  darkChipClassName: string
+  lightPanelClassName: string
+  darkPanelClassName: string
+  lightAccentClassName: string
+  darkAccentClassName: string
   buttonClassName: string
 }
 
@@ -47,12 +52,18 @@ const appLinks: AppLink[] = [
     href: 'https://translate.laychu.com/',
     label: 'Windows utility',
     icon: LanguageIcon,
-    iconClassName: 'text-teal-700',
-    iconWrapClassName: 'bg-teal-100',
-    chipClassName: 'bg-teal-50 text-teal-700',
-    panelClassName:
+    lightIconClassName: 'text-teal-700',
+    darkIconClassName: 'text-teal-200',
+    lightIconWrapClassName: 'bg-teal-100',
+    darkIconWrapClassName: 'bg-teal-500/18',
+    lightChipClassName: 'bg-teal-50 text-teal-700',
+    darkChipClassName: 'bg-teal-500/14 text-teal-200',
+    lightPanelClassName:
       'bg-[linear-gradient(135deg,rgba(240,253,250,0.95),rgba(255,255,255,0.92))] border-teal-100/80',
-    accentClassName: 'from-teal-300/70 via-emerald-200/40 to-transparent',
+    darkPanelClassName:
+      'bg-[linear-gradient(135deg,rgba(15,23,42,0.94),rgba(6,78,59,0.38))] border-teal-500/18',
+    lightAccentClassName: 'from-teal-300/70 via-emerald-200/40 to-transparent',
+    darkAccentClassName: 'from-teal-400/20 via-emerald-300/12 to-transparent',
     buttonClassName: 'bg-teal-700 text-white',
   },
   {
@@ -63,12 +74,18 @@ const appLinks: AppLink[] = [
     href: 'https://vigiayto.laychu.com/',
     label: 'Offline 100%',
     icon: DocumentMagnifyingGlassIcon,
-    iconClassName: 'text-amber-700',
-    iconWrapClassName: 'bg-amber-100',
-    chipClassName: 'bg-amber-50 text-amber-700',
-    panelClassName:
+    lightIconClassName: 'text-amber-700',
+    darkIconClassName: 'text-amber-200',
+    lightIconWrapClassName: 'bg-amber-100',
+    darkIconWrapClassName: 'bg-amber-500/18',
+    lightChipClassName: 'bg-amber-50 text-amber-700',
+    darkChipClassName: 'bg-amber-500/14 text-amber-200',
+    lightPanelClassName:
       'bg-[linear-gradient(135deg,rgba(255,251,235,0.96),rgba(255,255,255,0.92))] border-amber-100/80',
-    accentClassName: 'from-amber-300/70 via-orange-200/40 to-transparent',
+    darkPanelClassName:
+      'bg-[linear-gradient(135deg,rgba(15,23,42,0.94),rgba(120,53,15,0.36))] border-amber-500/18',
+    lightAccentClassName: 'from-amber-300/70 via-orange-200/40 to-transparent',
+    darkAccentClassName: 'from-amber-400/18 via-orange-300/12 to-transparent',
     buttonClassName: 'bg-amber-600 text-white',
   },
   {
@@ -79,12 +96,18 @@ const appLinks: AppLink[] = [
     href: 'http://semit.laychu.com/',
     label: 'Widget điện thoại',
     icon: FolderOpenIcon,
-    iconClassName: 'text-sky-700',
-    iconWrapClassName: 'bg-sky-100',
-    chipClassName: 'bg-sky-50 text-sky-700',
-    panelClassName:
+    lightIconClassName: 'text-sky-700',
+    darkIconClassName: 'text-sky-200',
+    lightIconWrapClassName: 'bg-sky-100',
+    darkIconWrapClassName: 'bg-sky-500/18',
+    lightChipClassName: 'bg-sky-50 text-sky-700',
+    darkChipClassName: 'bg-sky-500/14 text-sky-200',
+    lightPanelClassName:
       'bg-[linear-gradient(135deg,rgba(240,249,255,0.96),rgba(255,255,255,0.92))] border-sky-100/80',
-    accentClassName: 'from-sky-300/70 via-cyan-200/40 to-transparent',
+    darkPanelClassName:
+      'bg-[linear-gradient(135deg,rgba(15,23,42,0.94),rgba(12,74,110,0.34))] border-sky-500/18',
+    lightAccentClassName: 'from-sky-300/70 via-cyan-200/40 to-transparent',
+    darkAccentClassName: 'from-sky-400/18 via-cyan-300/12 to-transparent',
     buttonClassName: 'bg-sky-700 text-white',
   },
 ]
@@ -267,29 +290,51 @@ function App() {
                 href,
                 label,
                 icon: Icon,
-                iconClassName,
-                iconWrapClassName,
-                chipClassName,
-                panelClassName,
-                accentClassName,
+                lightIconClassName,
+                darkIconClassName,
+                lightIconWrapClassName,
+                darkIconWrapClassName,
+                lightChipClassName,
+                darkChipClassName,
+                lightPanelClassName,
+                darkPanelClassName,
+                lightAccentClassName,
+                darkAccentClassName,
                 buttonClassName,
               }) => (
                 <article
                   key={title}
-                  className={`theme-product-card relative overflow-hidden rounded-[32px] border p-6 shadow-xl shadow-slate-900/7 ${panelClassName}`}
+                  className={`theme-product-card relative overflow-hidden rounded-[32px] border p-6 shadow-xl shadow-slate-900/7 ${
+                    resolvedTheme === 'dark' ? darkPanelClassName : lightPanelClassName
+                  }`}
                 >
                   <div
-                    className={`pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b ${accentClassName}`}
+                    className={`pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b ${
+                      resolvedTheme === 'dark' ? darkAccentClassName : lightAccentClassName
+                    }`}
                   />
 
                   <div className="relative flex h-full flex-col gap-6">
                     <div className="flex items-start justify-between gap-4">
                       <div
-                        className={`grid size-14 place-items-center rounded-[20px] shadow-sm ${iconWrapClassName}`}
+                        className={`grid size-14 place-items-center rounded-[20px] shadow-sm ${
+                          resolvedTheme === 'dark'
+                            ? darkIconWrapClassName
+                            : lightIconWrapClassName
+                        }`}
                       >
-                        <Icon className={`size-7 ${iconClassName}`} />
+                        <Icon
+                          className={`size-7 ${
+                            resolvedTheme === 'dark' ? darkIconClassName : lightIconClassName
+                          }`}
+                        />
                       </div>
-                      <Chip className={`rounded-full ${chipClassName}`} variant="soft">
+                      <Chip
+                        className={`rounded-full ${
+                          resolvedTheme === 'dark' ? darkChipClassName : lightChipClassName
+                        }`}
+                        variant="soft"
+                      >
                         {label}
                       </Chip>
                     </div>
@@ -364,7 +409,22 @@ function App() {
               <p className="theme-body text-sm text-slate-500">laychu.com</p>
             </div>
 
-            <div className="flex items-center gap-3 text-sm text-slate-500">
+            <div className="flex flex-wrap items-center justify-end gap-3 text-sm text-slate-500">
+              <div className="theme-switcher inline-flex flex-wrap items-center gap-1 rounded-full px-1.5 py-1.5">
+                {themeOptions.map(({ id, label, icon: Icon }) => (
+                  <button
+                    key={id}
+                    type="button"
+                    title={`Chuyển sang chế độ ${label.toLowerCase()}`}
+                    className={`theme-switcher__option ${themeMode === id ? 'theme-switcher__option--active' : ''}`}
+                    onClick={() => setThemeMode(id)}
+                  >
+                    <Icon className="size-3.5" />
+                    <span>{label}</span>
+                  </button>
+                ))}
+              </div>
+
               <div className="grid size-10 place-items-center rounded-full bg-slate-900 text-white">
                 <Squares2X2Icon className="size-5" />
               </div>
@@ -372,23 +432,6 @@ function App() {
                 <p className="theme-heading font-semibold text-slate-900">Made with love by namhnz</p>
                 <p className="theme-body">namhnz apps · laychu.com</p>
               </div>
-            </div>
-          </div>
-
-          <div className="mt-6 flex flex-wrap items-center justify-end gap-2">
-            <div className="theme-switcher inline-flex flex-wrap items-center gap-2 rounded-full px-2 py-2">
-              {themeOptions.map(({ id, label, icon: Icon }) => (
-                <button
-                  key={id}
-                  type="button"
-                  title={`Chuyển sang chế độ ${label.toLowerCase()}`}
-                  className={`theme-switcher__option ${themeMode === id ? 'theme-switcher__option--active' : ''}`}
-                  onClick={() => setThemeMode(id)}
-                >
-                  <Icon className="size-4" />
-                  <span>{label}</span>
-                </button>
-              ))}
             </div>
           </div>
         </footer>
