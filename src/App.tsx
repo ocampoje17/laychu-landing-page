@@ -148,7 +148,6 @@ function App() {
             className="flex min-w-max gap-2 rounded-full border border-white/70 bg-white/70 p-2 shadow-lg shadow-slate-900/5"
           >
             <Tabs.Tab id="apps">Ứng dụng</Tabs.Tab>
-            <Tabs.Tab id="contacts">Liên hệ</Tabs.Tab>
           </Tabs.List>
         </Tabs.ListContainer>
 
@@ -216,36 +215,76 @@ function App() {
           </section>
         </Tabs.Panel>
 
-        <Tabs.Panel id="contacts" className="pt-6">
-          <section className="grid gap-5 lg:grid-cols-2">
-            {contacts.map(({ label, value, href, icon: Icon }) => (
-              <Card
-                key={label}
-                className="border border-white/70 bg-white/80 shadow-xl shadow-slate-900/8"
-              >
-                <Card.Content className="flex flex-col gap-4 p-5 sm:flex-row sm:items-center sm:justify-between">
-                  <div className="flex min-w-0 items-center gap-4">
-                    <div className="grid size-12 place-items-center rounded-2xl bg-slate-100 text-slate-700">
-                      <Icon className="size-6" />
-                    </div>
-                    <div className="min-w-0">
-                      <p className="font-semibold text-slate-900">{label}</p>
-                      <p className="break-all text-sm text-slate-500">{value}</p>
-                    </div>
-                  </div>
-                  <Button
-                    className="rounded-full"
-                    variant="outline"
-                    onPress={() => openExternal(href)}
-                  >
-                    Mở liên hệ
-                  </Button>
-                </Card.Content>
-              </Card>
-            ))}
-          </section>
-        </Tabs.Panel>
       </Tabs.Root>
+
+      <section className="grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
+        <Card className="border border-white/70 bg-white/80 shadow-xl shadow-slate-900/8">
+          <Card.Header className="space-y-2">
+            <Chip className="rounded-full bg-rose-50 text-rose-700" variant="soft">
+              Liên hệ
+            </Chip>
+            <Card.Title className="text-2xl text-slate-900">
+              Kết nối với namhnz
+            </Card.Title>
+            <Card.Description className="text-slate-500">
+              Nếu cần trao đổi nhanh, bạn có thể liên hệ trực tiếp qua các kênh dưới đây.
+            </Card.Description>
+          </Card.Header>
+          <Card.Content className="grid gap-4">
+            {contacts.map(({ label, value, href, icon: Icon }) => (
+              <div
+                key={label}
+                className="flex flex-col gap-4 rounded-2xl border border-slate-200 bg-slate-50/80 p-4 sm:flex-row sm:items-center sm:justify-between"
+              >
+                <div className="flex min-w-0 items-center gap-4">
+                  <div className="grid size-12 place-items-center rounded-2xl bg-white text-slate-700 shadow-sm">
+                    <Icon className="size-6" />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="font-semibold text-slate-900">{label}</p>
+                    <p className="break-all text-sm text-slate-500">{value}</p>
+                  </div>
+                </div>
+                <Button
+                  className="rounded-full"
+                  variant="outline"
+                  onPress={() => openExternal(href)}
+                >
+                  Mở liên hệ
+                </Button>
+              </div>
+            ))}
+          </Card.Content>
+        </Card>
+
+        <Card className="border border-white/70 bg-white/80 shadow-xl shadow-slate-900/8">
+          <Card.Content className="flex h-full flex-col justify-between gap-6 p-6">
+            <div className="space-y-3">
+              <Chip className="rounded-full bg-slate-100 text-slate-700" variant="soft">
+                Lời nhắn
+              </Chip>
+              <h2 className="font-['Manrope'] text-3xl font-bold tracking-tight text-slate-900">
+                Made with love by namhnz
+              </h2>
+              <Text className="text-base leading-7 text-slate-600">
+                Một landing page gọn gàng để mở nhanh các ứng dụng quan trọng, rõ ràng trên cả desktop lẫn mobile.
+              </Text>
+            </div>
+
+            <div className="rounded-3xl border border-slate-200 bg-[linear-gradient(135deg,_rgba(255,255,255,0.92),_rgba(241,245,249,0.95))] p-5">
+              <div className="flex items-center gap-3">
+                <div className="grid size-12 place-items-center rounded-2xl bg-slate-900 text-white">
+                  <Squares2X2Icon className="size-6" />
+                </div>
+                <div>
+                  <p className="font-semibold text-slate-900">namhnz apps</p>
+                  <p className="text-sm text-slate-500">laychu.com</p>
+                </div>
+              </div>
+            </div>
+          </Card.Content>
+        </Card>
+      </section>
     </main>
   )
 }
