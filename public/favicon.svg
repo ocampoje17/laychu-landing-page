@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="8" x2="58" y1="6" y2="60" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#27B9AB" />
+      <stop offset="1" stop-color="#2E6EEB" />
+    </linearGradient>
+    <linearGradient id="shine" x1="14" x2="50" y1="10" y2="48" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF8E8" stop-opacity=".95" />
+      <stop offset="1" stop-color="#D8F6FF" stop-opacity=".72" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="url(#bg)" />
+  <rect x="4" y="4" width="56" height="56" rx="16" fill="url(#shine)" opacity=".18" />
+  <path
+    fill="#fff"
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+    d="M18 18.5a4.5 4.5 0 0 1 4.5-4.5h5a4.5 4.5 0 0 1 4.5 4.5v5a4.5 4.5 0 0 1-4.5 4.5h-5a4.5 4.5 0 0 1-4.5-4.5v-5Zm14 0A4.5 4.5 0 0 1 36.5 14h5a4.5 4.5 0 0 1 4.5 4.5v5a4.5 4.5 0 0 1-4.5 4.5h-5A4.5 4.5 0 0 1 32 23.5v-5ZM18 36.5a4.5 4.5 0 0 1 4.5-4.5h5a4.5 4.5 0 0 1 4.5 4.5v5a4.5 4.5 0 0 1-4.5 4.5h-5a4.5 4.5 0 0 1-4.5-4.5v-5Zm14 0a4.5 4.5 0 0 1 4.5-4.5h5a4.5 4.5 0 0 1 4.5 4.5v5a4.5 4.5 0 0 1-4.5 4.5h-5a4.5 4.5 0 0 1-4.5-4.5v-5Z"
+  />
+</svg>
