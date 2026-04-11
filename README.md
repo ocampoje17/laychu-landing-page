@@ -1,23 +1,25 @@
 # laychu-landing-page
 
-Landing page tiếng Việt cho hệ sinh thái ứng dụng của `namhnz`.
+Landing page cho he sinh thai ung dung cua `namhnz`.
 
-## Nội dung
+## Noi dung
 
-- Điều hướng tới `https://translate.laychu.com/`
-- Điều hướng tới `https://vigiayto.laychu.com/`
-- Hiển thị liên hệ Gmail `namqhong@gmail.com`
-- Hiển thị Telegram `@namhnz`
+- Dieu huong toi `https://translate.laychu.com/`
+- Dieu huong toi `https://vigiayto.laychu.com/`
+- Dieu huong toi `http://semit.laychu.com/`
+- Hien thi lien he Gmail `namqhong@gmail.com`
+- Hien thi Telegram `@namhnz`
 
-## Công nghệ
+## Cong nghe
 
 - React 19
 - TypeScript
 - Vite
-- `liquid-glass-react`
+- HeroUI
+- Tailwind CSS 4
 - `@heroicons/react`
 
-## Chạy local
+## Chay local
 
 ```bash
 npm install
@@ -33,7 +35,7 @@ npm run lint
 
 ## GitHub Pages
 
-- Repository Pages URL hiện tại: `https://ocampoje17.github.io/laychu-landing-page/`
-- Nếu dùng custom domain như `laychu.com`, build hiện đã cấu hình theo root domain (`/`)
-- Workflow deploy tự động nằm tại `.github/workflows/deploy.yml`
-- Trong GitHub: vào `Settings` -> `Pages` -> chọn `Source` là `GitHub Actions`
+- Repository Pages URL hien tai: `https://ocampoje17.github.io/laychu-landing-page/`
+- Neu dung custom domain nhu `laychu.com`, build hien da cau hinh theo root domain (`/`)
+- Workflow deploy tu dong nam tai `.github/workflows/deploy.yml`
+- Trong GitHub: vao `Settings` -> `Pages` -> chon `Source` la `GitHub Actions`
