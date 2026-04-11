@@ -138,6 +138,10 @@ function App() {
     window.open(href, '_blank', 'noopener,noreferrer')
   }
 
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+  }
+
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
 
@@ -205,21 +209,25 @@ function App() {
               </div>
 
               <div className="flex flex-wrap gap-3">
-                <Button
-                  className="rounded-full bg-slate-900 text-white"
-                  onPress={() => {
-                    document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })
-                  }}
-                >
-                  Xem sản phẩm
-                </Button>
-                <Button
-                  className="rounded-full"
-                  variant="outline"
-                  onPress={() => openExternal('mailto:namqhong@gmail.com')}
-                >
-                  Liên hệ
-                </Button>
+                <span title="Xem danh sách sản phẩm bên dưới">
+                  <Button
+                    className="rounded-full bg-slate-900 text-white"
+                    onPress={() => {
+                      scrollToSection('products')
+                    }}
+                  >
+                    Xem sản phẩm
+                  </Button>
+                </span>
+                <span title="Di chuyển đến phần liên hệ">
+                  <Button
+                    className="rounded-full"
+                    variant="outline"
+                    onPress={() => scrollToSection('contact')}
+                  >
+                    Liên hệ
+                  </Button>
+                </span>
               </div>
             </div>
 
@@ -297,15 +305,17 @@ function App() {
                     </div>
 
                     <div className="mt-auto">
-                      <Button
-                        className={`w-full rounded-full ${buttonClassName}`}
-                        onPress={() => openExternal(href)}
-                      >
-                        <span className="inline-flex items-center gap-2">
-                          Khám phá sản phẩm
-                          <ArrowTopRightOnSquareIcon className="size-4" />
-                        </span>
-                      </Button>
+                      <span title={`Mở ${title}`}>
+                        <Button
+                          className={`w-full rounded-full ${buttonClassName}`}
+                          onPress={() => openExternal(href)}
+                        >
+                          <span className="inline-flex items-center gap-2">
+                            Khám phá sản phẩm
+                            <ArrowTopRightOnSquareIcon className="size-4" />
+                          </span>
+                        </Button>
+                      </span>
                     </div>
                   </div>
                 </article>
@@ -314,7 +324,10 @@ function App() {
           </section>
         </section>
 
-        <section className="theme-contact-cta rounded-[32px] border border-white/70 bg-[linear-gradient(135deg,rgba(15,23,42,0.96),rgba(30,41,59,0.94))] px-6 py-8 text-white shadow-2xl shadow-slate-900/15 sm:px-8 lg:flex lg:items-end lg:justify-between">
+        <section
+          id="contact"
+          className="theme-contact-cta rounded-[32px] border border-white/70 bg-[linear-gradient(135deg,rgba(15,23,42,0.96),rgba(30,41,59,0.94))] px-6 py-8 text-white shadow-2xl shadow-slate-900/15 sm:px-8 lg:flex lg:items-end lg:justify-between"
+        >
           <div className="max-w-2xl space-y-3">
             <p className="theme-contact-kicker text-sm font-semibold uppercase tracking-[0.24em] text-white/60">
               Liên hệ
@@ -329,16 +342,17 @@ function App() {
 
           <div className="mt-6 flex flex-wrap gap-3 lg:mt-0 lg:justify-end">
             {contacts.map(({ label, value, href, icon: Icon }) => (
-              <Button
-                key={label}
-                className="rounded-full bg-white text-slate-900"
-                onPress={() => openExternal(href)}
-              >
-                <span className="inline-flex items-center gap-2">
-                  <Icon className="size-4" />
-                  {value}
-                </span>
-              </Button>
+              <span key={label} title={`Liên hệ qua ${label}`}>
+                <Button
+                  className="rounded-full bg-white text-slate-900"
+                  onPress={() => openExternal(href)}
+                >
+                  <span className="inline-flex items-center gap-2">
+                    <Icon className="size-4" />
+                    {value}
+                  </span>
+                </Button>
+              </span>
             ))}
           </div>
         </section>
@@ -367,6 +381,7 @@ function App() {
                 <button
                   key={id}
                   type="button"
+                  title={`Chuyển sang chế độ ${label.toLowerCase()}`}
                   className={`theme-switcher__option ${themeMode === id ? 'theme-switcher__option--active' : ''}`}
                   onClick={() => setThemeMode(id)}
                 >
