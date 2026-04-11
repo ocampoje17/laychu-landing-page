@@ -30,3 +30,9 @@ npm run dev
 npm run build
 npm run lint
 ```
+
+## GitHub Pages
+
+- Repository Pages URL dự kiến: `https://ocampoje17.github.io/laychu-landing-page/`
+- Workflow deploy tự động nằm tại `.github/workflows/deploy.yml`
+- Trong GitHub: vào `Settings` -> `Pages` -> chọn `Source` là `GitHub Actions`
