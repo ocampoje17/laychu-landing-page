@@ -4,6 +4,7 @@ import {
   ArrowTopRightOnSquareIcon,
   ComputerDesktopIcon,
   DocumentMagnifyingGlassIcon,
+  DocumentTextIcon,
   EnvelopeIcon,
   FolderOpenIcon,
   LanguageIcon,
@@ -109,6 +110,28 @@ const appLinks: AppLink[] = [
     lightAccentClassName: 'from-sky-300/70 via-cyan-200/40 to-transparent',
     darkAccentClassName: 'from-sky-400/18 via-cyan-300/12 to-transparent',
     buttonClassName: 'bg-sky-700 text-white',
+  },
+  {
+    title: 'Pdf Converter',
+    teaser: 'Chuyển PDF sang chữ hoặc .docx ngay trên Windows.',
+    description:
+      'Ứng dụng native chỉ dành cho Windows, giúp chuyển đổi PDF nhanh chóng sang chữ hoặc file .docx, hoạt động tốt với tiếng Việt, offline 100% và toàn bộ dữ liệu chỉ nằm trên máy bạn.',
+    href: 'https://pdf.laychu.com',
+    label: 'Offline & bảo mật',
+    icon: DocumentTextIcon,
+    lightIconClassName: 'text-rose-700',
+    darkIconClassName: 'text-rose-200',
+    lightIconWrapClassName: 'bg-rose-100',
+    darkIconWrapClassName: 'bg-rose-500/18',
+    lightChipClassName: 'bg-rose-50 text-rose-700',
+    darkChipClassName: 'bg-rose-500/14 text-rose-200',
+    lightPanelClassName:
+      'bg-[linear-gradient(135deg,rgba(255,241,242,0.96),rgba(255,255,255,0.92))] border-rose-100/80',
+    darkPanelClassName:
+      'bg-[linear-gradient(135deg,rgba(15,23,42,0.94),rgba(127,29,29,0.34))] border-rose-500/18',
+    lightAccentClassName: 'from-rose-300/70 via-orange-200/35 to-transparent',
+    darkAccentClassName: 'from-rose-400/18 via-orange-300/12 to-transparent',
+    buttonClassName: 'bg-rose-700 text-white',
   },
 ]
 
@@ -281,7 +304,7 @@ function App() {
             </Text>
           </div>
 
-          <section className="grid gap-5 lg:grid-cols-3">
+          <section className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {appLinks.map(
               ({
                 title,
