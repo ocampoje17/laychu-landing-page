@@ -304,7 +304,7 @@ function App() {
             </Text>
           </div>
 
-          <section className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          <section className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {appLinks.map(
               ({
                 title,
