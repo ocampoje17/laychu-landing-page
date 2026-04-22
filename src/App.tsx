@@ -393,6 +393,33 @@ function App() {
         </section>
 
         <section
+          id="donate"
+          className="theme-panel rounded-[32px] border border-white/70 bg-white/70 px-6 py-8 shadow-xl shadow-slate-900/8 backdrop-blur-xl sm:px-8 lg:grid lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-10"
+        >
+          <div className="space-y-4">
+            <p className="theme-kicker text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">
+              Mời Cà Phê
+            </p>
+            <h2 className="theme-heading font-['Manrope'] text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+              Nếu bạn thấy sản phẩm hữu ích, mời mình 1 ly cafe nhé.
+            </h2>
+            <Text className="theme-body max-w-2xl text-base leading-7 text-slate-600">
+              Sự ủng hộ của bạn là nguồn động lực để mình tiếp tục tạo ra những sản phẩm chất lượng hơn mỗi ngày.
+            </Text>
+          </div>
+
+          <div className="mt-6 flex justify-center lg:mt-0 lg:justify-end">
+            <div className="rounded-[28px] border border-slate-200/75 bg-white p-3 shadow-lg shadow-slate-900/10">
+              <img
+                src="/donate_qr_code.png"
+                alt="QR chuyển khoản mời cafe cho namhnz"
+                className="h-auto w-full max-w-[320px] rounded-[20px] object-cover"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section
           id="contact"
           className="theme-contact-cta rounded-[32px] border border-white/70 bg-[linear-gradient(135deg,rgba(15,23,42,0.96),rgba(30,41,59,0.94))] px-6 py-8 text-white shadow-2xl shadow-slate-900/15 sm:px-8 lg:flex lg:items-end lg:justify-between"
         >
