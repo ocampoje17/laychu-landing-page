@@ -394,7 +394,11 @@ function App() {
 
         <section
           id="donate"
-          className="theme-panel rounded-[32px] border border-white/70 bg-white/70 px-6 py-8 shadow-xl shadow-slate-900/8 backdrop-blur-xl sm:px-8 lg:grid lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-10"
+          className={`rounded-[32px] border px-6 py-8 shadow-xl shadow-slate-900/8 backdrop-blur-xl sm:px-8 lg:grid lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-10 ${
+            resolvedTheme === 'dark'
+              ? 'border-slate-700/60 bg-[linear-gradient(135deg,rgba(15,23,42,0.9),rgba(6,78,59,0.28),rgba(12,74,110,0.22))]'
+              : 'border-white/70 bg-[linear-gradient(135deg,rgba(255,255,255,0.9),rgba(240,253,250,0.92),rgba(239,246,255,0.88))]'
+          }`}
         >
           <div className="space-y-4">
             <p className="theme-kicker text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">
