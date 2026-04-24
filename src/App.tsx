@@ -10,6 +10,7 @@ import {
   LanguageIcon,
   MoonIcon,
   PaperAirplaneIcon,
+  ShoppingBagIcon,
   SunIcon,
 } from '@heroicons/react/24/outline'
 import { Squares2X2Icon } from '@heroicons/react/24/solid'
@@ -132,6 +133,28 @@ const appLinks: AppLink[] = [
     lightAccentClassName: 'from-rose-300/70 via-orange-200/35 to-transparent',
     darkAccentClassName: 'from-rose-400/18 via-orange-300/12 to-transparent',
     buttonClassName: 'bg-rose-700 text-white',
+  },
+  {
+    title: 'List mua sắm',
+    teaser: 'Chọn sản phẩm Shopee nhanh và dễ hơn.',
+    description:
+      'Trang web giúp bạn lựa chọn sản phẩm mua sắm từ Shopee một cách dễ dàng hơn.',
+    href: 'https://listmuasam.com/',
+    label: 'Shopee web',
+    icon: ShoppingBagIcon,
+    lightIconClassName: 'text-indigo-700',
+    darkIconClassName: 'text-indigo-200',
+    lightIconWrapClassName: 'bg-indigo-100',
+    darkIconWrapClassName: 'bg-indigo-500/18',
+    lightChipClassName: 'bg-indigo-50 text-indigo-700',
+    darkChipClassName: 'bg-indigo-500/14 text-indigo-200',
+    lightPanelClassName:
+      'bg-[linear-gradient(135deg,rgba(238,242,255,0.96),rgba(255,255,255,0.92))] border-indigo-100/80',
+    darkPanelClassName:
+      'bg-[linear-gradient(135deg,rgba(15,23,42,0.94),rgba(49,46,129,0.34))] border-indigo-500/18',
+    lightAccentClassName: 'from-indigo-300/70 via-violet-200/35 to-transparent',
+    darkAccentClassName: 'from-indigo-400/18 via-violet-300/12 to-transparent',
+    buttonClassName: 'bg-indigo-700 text-white',
   },
 ]
 
