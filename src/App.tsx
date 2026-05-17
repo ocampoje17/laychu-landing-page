@@ -139,7 +139,7 @@ const appLinks: AppLink[] = [
     teaser: 'Chọn sản phẩm Shopee nhanh và dễ hơn.',
     description:
       'Trang web giúp bạn lựa chọn sản phẩm mua sắm từ Shopee một cách dễ dàng hơn.',
-    href: 'https://listmuasam.laychu.com/',
+    href: 'https://listmuasam.store/',
     label: 'Shopee web',
     icon: ShoppingBagIcon,
     lightIconClassName: 'text-indigo-700',
