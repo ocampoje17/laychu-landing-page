@@ -1,6 +1,7 @@
 import { useEffect, useState, type ComponentType, type SVGProps } from 'react'
 import { Button, Chip, Surface, Text } from '@heroui/react'
 import {
+  AcademicCapIcon,
   ArrowTopRightOnSquareIcon,
   ComputerDesktopIcon,
   DocumentMagnifyingGlassIcon,
@@ -155,6 +156,28 @@ const appLinks: AppLink[] = [
     lightAccentClassName: 'from-indigo-300/70 via-violet-200/35 to-transparent',
     darkAccentClassName: 'from-indigo-400/18 via-violet-300/12 to-transparent',
     buttonClassName: 'bg-indigo-700 text-white',
+  },
+  {
+    title: 'Thi Thử App',
+    teaser: 'Ôn thi hiệu quả, chinh phục mọi Kỳ thi',
+    description:
+      'Ứng dụng Thi Thử là công cụ trắc nghiệm tối giản, mạnh mẽ chạy trực tiếp trên máy tính và điện thoại. Giúp bạn chủ động ôn tập đề thi, lưu trữ kết quả và tiến bộ vượt bậc từng ngày.',
+    href: 'https://thithu.laychu.com/',
+    label: 'Trắc nghiệm tối giản',
+    icon: AcademicCapIcon,
+    lightIconClassName: 'text-violet-700',
+    darkIconClassName: 'text-violet-200',
+    lightIconWrapClassName: 'bg-violet-100',
+    darkIconWrapClassName: 'bg-violet-500/18',
+    lightChipClassName: 'bg-violet-50 text-violet-700',
+    darkChipClassName: 'bg-violet-500/14 text-violet-200',
+    lightPanelClassName:
+      'bg-[linear-gradient(135deg,rgba(245,243,255,0.96),rgba(255,255,255,0.92))] border-violet-100/80',
+    darkPanelClassName:
+      'bg-[linear-gradient(135deg,rgba(15,23,42,0.94),rgba(91,33,182,0.26))] border-violet-500/18',
+    lightAccentClassName: 'from-violet-300/70 via-fuchsia-200/35 to-transparent',
+    darkAccentClassName: 'from-violet-400/18 via-fuchsia-300/12 to-transparent',
+    buttonClassName: 'bg-violet-700 text-white',
   },
 ]
 
