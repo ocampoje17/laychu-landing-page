@@ -136,6 +136,28 @@ const appLinks: AppLink[] = [
     buttonClassName: 'bg-rose-700 text-white',
   },
   {
+    title: 'Projects Runner',
+    teaser: 'Lưu, sắp xếp và chạy lại các lệnh quen dùng.',
+    description:
+      'Ứng dụng desktop giúp bạn lưu, tổ chức và chạy lại những command dùng đi dùng lại ở nhiều project khác nhau, thay vì phải lục lại ghi chú, lịch sử terminal hay tin nhắn cũ.',
+    href: 'https://projects-runner.laychu.com/',
+    label: 'Desktop commands',
+    icon: ComputerDesktopIcon,
+    lightIconClassName: 'text-emerald-700',
+    darkIconClassName: 'text-emerald-200',
+    lightIconWrapClassName: 'bg-emerald-100',
+    darkIconWrapClassName: 'bg-emerald-500/18',
+    lightChipClassName: 'bg-emerald-50 text-emerald-700',
+    darkChipClassName: 'bg-emerald-500/14 text-emerald-200',
+    lightPanelClassName:
+      'bg-[linear-gradient(135deg,rgba(236,253,245,0.96),rgba(255,255,255,0.92))] border-emerald-100/80',
+    darkPanelClassName:
+      'bg-[linear-gradient(135deg,rgba(15,23,42,0.94),rgba(6,95,70,0.34))] border-emerald-500/18',
+    lightAccentClassName: 'from-emerald-300/70 via-lime-200/35 to-transparent',
+    darkAccentClassName: 'from-emerald-400/18 via-lime-300/12 to-transparent',
+    buttonClassName: 'bg-emerald-700 text-white',
+  },
+  {
     title: 'List mua sắm',
     teaser: 'Chọn sản phẩm Shopee nhanh và dễ hơn.',
     description:
