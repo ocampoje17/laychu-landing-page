@@ -201,6 +201,28 @@ const appLinks: AppLink[] = [
     darkAccentClassName: 'from-violet-400/18 via-fuchsia-300/12 to-transparent',
     buttonClassName: 'bg-violet-700 text-white',
   },
+  {
+    title: 'Image Cropper',
+    teaser: 'Crop, resize, nén & chuyển định dạng ngay trên trình duyệt.',
+    description:
+      'Công cụ web giúp bạn crop, resize, nén ảnh và chuyển đổi định dạng hoàn toàn trên trình duyệt, nhanh gọn và không cần cài đặt thêm.',
+    href: 'https://image-cropper.laychu.com/',
+    label: 'Browser tool',
+    icon: DocumentTextIcon,
+    lightIconClassName: 'text-cyan-700',
+    darkIconClassName: 'text-cyan-200',
+    lightIconWrapClassName: 'bg-cyan-100',
+    darkIconWrapClassName: 'bg-cyan-500/18',
+    lightChipClassName: 'bg-cyan-50 text-cyan-700',
+    darkChipClassName: 'bg-cyan-500/14 text-cyan-200',
+    lightPanelClassName:
+      'bg-[linear-gradient(135deg,rgba(236,254,255,0.96),rgba(255,255,255,0.92))] border-cyan-100/80',
+    darkPanelClassName:
+      'bg-[linear-gradient(135deg,rgba(15,23,42,0.94),rgba(8,145,178,0.28))] border-cyan-500/18',
+    lightAccentClassName: 'from-cyan-300/70 via-sky-200/35 to-transparent',
+    darkAccentClassName: 'from-cyan-400/18 via-sky-300/12 to-transparent',
+    buttonClassName: 'bg-cyan-700 text-white',
+  },
 ]
 
 const contacts: Contact[] = [
