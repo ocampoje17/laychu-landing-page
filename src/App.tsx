@@ -11,6 +11,7 @@ import {
   LanguageIcon,
   MoonIcon,
   PaperAirplaneIcon,
+  PhotoIcon,
   ShoppingBagIcon,
   SunIcon,
 } from '@heroicons/react/24/outline'
@@ -207,8 +208,8 @@ const appLinks: AppLink[] = [
     description:
       'Công cụ web giúp bạn crop, resize, nén ảnh và chuyển đổi định dạng hoàn toàn trên trình duyệt, nhanh gọn và không cần cài đặt thêm.',
     href: 'https://image-cropper.laychu.com/',
-    label: 'Browser tool',
-    icon: DocumentTextIcon,
+    label: 'Image tool',
+    icon: PhotoIcon,
     lightIconClassName: 'text-cyan-700',
     darkIconClassName: 'text-cyan-200',
     lightIconWrapClassName: 'bg-cyan-100',
