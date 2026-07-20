@@ -8,26 +8,55 @@ declare global {
   }
 }
 
-let googleTagLoaded = false
+let googleTagLoadPromise: Promise<void> | undefined
+let googleTagInitialized = false
+let pageViewConfigured = false
+
+function getGoogleTag() {
+  window.dataLayer = window.dataLayer || []
+  window.gtag = window.gtag || ((...args: unknown[]) => window.dataLayer?.push(args))
+  return window.gtag!
+}
+
+function loadGoogleTag() {
+  if (googleTagLoadPromise) return googleTagLoadPromise
+
+  googleTagLoadPromise = new Promise((resolve, reject) => {
+    const script = document.createElement('script')
+    script.async = true
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`
+    script.onload = () => resolve()
+    script.onerror = () => {
+      googleTagLoadPromise = undefined
+      script.remove()
+      reject(new Error('Unable to load Google Analytics'))
+    }
+    document.head.append(script)
+  })
+
+  return googleTagLoadPromise
+}
 
 export function enableAnalytics() {
   window[`ga-disable-${GA_MEASUREMENT_ID}`] = false
-
-  if (googleTagLoaded) {
-    window.gtag?.('consent', 'update', { analytics_storage: 'granted' })
-    return
+  const gtag = getGoogleTag()
+  if (!googleTagInitialized) {
+    gtag('js', new Date())
+    googleTagInitialized = true
   }
 
-  window.dataLayer = window.dataLayer || []
-  window.gtag = window.gtag || ((...args: unknown[]) => window.dataLayer?.push(args))
-  window.gtag('js', new Date())
-  window.gtag('config', GA_MEASUREMENT_ID)
-
-  const script = document.createElement('script')
-  script.async = true
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`
-  document.head.append(script)
-  googleTagLoaded = true
+  void loadGoogleTag()
+    .then(() => {
+      if (window[`ga-disable-${GA_MEASUREMENT_ID}`]) return
+      gtag('consent', 'update', { analytics_storage: 'granted' })
+      if (!pageViewConfigured) {
+        gtag('config', GA_MEASUREMENT_ID)
+        pageViewConfigured = true
+      }
+    })
+    .catch(() => {
+      // The next consent action can retry loading the tag.
+    })
 }
 
 export function disableAnalytics() {
