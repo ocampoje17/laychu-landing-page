@@ -14,7 +14,11 @@ let pageViewConfigured = false
 
 function getGoogleTag() {
   window.dataLayer = window.dataLayer || []
-  window.gtag = window.gtag || ((...args: unknown[]) => window.dataLayer?.push(args))
+  window.gtag = window.gtag || function gtag() {
+    // Google gtag.js expects each command to be queued as an Arguments object.
+    // eslint-disable-next-line prefer-rest-params
+    window.dataLayer?.push(arguments)
+  }
   return window.gtag!
 }
 
