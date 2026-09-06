@@ -102,6 +102,11 @@ const products: Product[] = [
     lightPanelClassName: 'bg-[linear-gradient(135deg,rgba(245,243,255,0.96),rgba(255,255,255,0.92))] border-violet-100/80', darkPanelClassName: 'bg-[linear-gradient(135deg,rgba(15,23,42,0.94),rgba(91,33,182,0.26))] border-violet-500/18', lightAccentClassName: 'from-violet-300/70 via-fuchsia-200/35 to-transparent', darkAccentClassName: 'from-violet-400/18 via-fuchsia-300/12 to-transparent', buttonClassName: 'bg-violet-700 text-white',
   },
   {
+    id: 'mock-exam-web', title: 'Thi Thử Web', translationKey: 'mockExamWeb', href: 'https://thithuweb.com/', platforms: ['web'], icon: AcademicCapIcon,
+    lightIconClassName: 'text-blue-700', darkIconClassName: 'text-blue-200', lightIconWrapClassName: 'bg-blue-100', darkIconWrapClassName: 'bg-blue-500/18', lightChipClassName: 'bg-blue-50 text-blue-700', darkChipClassName: 'bg-blue-500/14 text-blue-200',
+    lightPanelClassName: 'bg-[linear-gradient(135deg,rgba(239,246,255,0.96),rgba(255,255,255,0.92))] border-blue-100/80', darkPanelClassName: 'bg-[linear-gradient(135deg,rgba(15,23,42,0.94),rgba(30,58,138,0.3))] border-blue-500/18', lightAccentClassName: 'from-blue-300/70 via-indigo-200/35 to-transparent', darkAccentClassName: 'from-blue-400/18 via-indigo-300/12 to-transparent', buttonClassName: 'bg-blue-700 text-white',
+  },
+  {
     id: 'image-cropper', title: 'Image Cropper', translationKey: 'imageCropper', href: 'https://image-cropper.laychu.com/', platforms: ['web'], icon: PhotoIcon,
     lightIconClassName: 'text-cyan-700', darkIconClassName: 'text-cyan-200', lightIconWrapClassName: 'bg-cyan-100', darkIconWrapClassName: 'bg-cyan-500/18', lightChipClassName: 'bg-cyan-50 text-cyan-700', darkChipClassName: 'bg-cyan-500/14 text-cyan-200',
     lightPanelClassName: 'bg-[linear-gradient(135deg,rgba(236,254,255,0.96),rgba(255,255,255,0.92))] border-cyan-100/80', darkPanelClassName: 'bg-[linear-gradient(135deg,rgba(15,23,42,0.94),rgba(8,145,178,0.28))] border-cyan-500/18', lightAccentClassName: 'from-cyan-300/70 via-sky-200/35 to-transparent', darkAccentClassName: 'from-cyan-400/18 via-sky-300/12 to-transparent', buttonClassName: 'bg-cyan-700 text-white',
