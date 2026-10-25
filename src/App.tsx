@@ -34,6 +34,7 @@ type Product = {
   href: string
   platforms: Platform[]
   icon: IconComponent
+  iconSrc?: string
   lightIconClassName: string
   darkIconClassName: string
   lightIconWrapClassName: string
@@ -57,6 +58,12 @@ type Contact = {
 const ANALYTICS_CONSENT_STORAGE_KEY = 'namhnz-analytics-consent'
 
 const products: Product[] = [
+  {
+    id: 'ocr4ai', title: 'Ocr4AI', translationKey: 'ocr4ai', href: 'https://ocr.laychu.com/', platforms: ['web'], icon: DocumentTextIcon,
+    iconSrc: '/ocr4ai-icon-128.png',
+    lightIconClassName: 'text-indigo-700', darkIconClassName: 'text-indigo-200', lightIconWrapClassName: 'bg-indigo-100', darkIconWrapClassName: 'bg-indigo-500/18', lightChipClassName: 'bg-indigo-50 text-indigo-700', darkChipClassName: 'bg-indigo-500/14 text-indigo-200',
+    lightPanelClassName: 'bg-[linear-gradient(135deg,rgba(238,242,255,0.96),rgba(255,255,255,0.92))] border-indigo-100/80', darkPanelClassName: 'bg-[linear-gradient(135deg,rgba(15,23,42,0.94),rgba(49,46,129,0.34))] border-indigo-500/18', lightAccentClassName: 'from-indigo-300/70 via-violet-200/35 to-transparent', darkAccentClassName: 'from-indigo-400/18 via-violet-300/12 to-transparent', buttonClassName: 'bg-indigo-700 text-white',
+  },
   {
     id: 'instant-translate',
     title: 'Instant Translate',
@@ -283,7 +290,9 @@ function App() {
                       <div className={`pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b ${resolvedTheme === 'dark' ? product.darkAccentClassName : product.lightAccentClassName}`} />
                       <div className="relative flex h-full flex-col gap-6">
                         <div className="flex items-start justify-between gap-4">
-                          <div className={`grid size-14 place-items-center rounded-[20px] shadow-sm ${resolvedTheme === 'dark' ? product.darkIconWrapClassName : product.lightIconWrapClassName}`}><Icon className={`size-7 ${resolvedTheme === 'dark' ? product.darkIconClassName : product.lightIconClassName}`} /></div>
+                          <div className={`grid size-14 shrink-0 place-items-center rounded-[20px] shadow-sm ${resolvedTheme === 'dark' ? product.darkIconWrapClassName : product.lightIconWrapClassName}`}>
+                            {product.iconSrc ? <img src={product.iconSrc} alt="" width={40} height={40} className="size-10 object-contain" /> : <Icon className={`size-7 ${resolvedTheme === 'dark' ? product.darkIconClassName : product.lightIconClassName}`} />}
+                          </div>
                           <div className="flex flex-wrap justify-end gap-2">
                             {isCrossPlatform && <Chip className="rounded-full bg-slate-900 text-white" variant="soft">{t('products.crossPlatform')}</Chip>}
                             <Chip className={`rounded-full ${resolvedTheme === 'dark' ? product.darkChipClassName : product.lightChipClassName}`} variant="soft">{t(`productsData.${product.translationKey}.label`)}</Chip>

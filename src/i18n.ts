@@ -72,6 +72,7 @@ const resources = {
         settings: 'Analytics settings',
       },
       productsData: {
+        ocr4ai: { teaser: "Turn images into text for AI", description: "Fast, low-cost OCR. AI input does not need to be 100% exact—just clear enough for AI to understand the content.", label: "OCR for AI" },
         instantTranslate: { teaser: 'Instant translation across Windows.', description: 'A Windows-only app that quickly translates what you are typing into another language across all Windows apps.', label: 'Windows utility' },
         documentWallet: { teaser: 'Your personal documents, 100% offline.', description: 'An app for managing personal documents that stores everything 100% offline, so your data stays private.', label: '100% offline' },
         semit: { teaser: 'A widget for upcoming milestones.', description: 'Remember upcoming milestones and keep a phone widget on screen so important dates stay in view.', label: 'Phone widget' },
@@ -98,6 +99,7 @@ const resources = {
       language: { label: 'Ngôn ngữ', choose: 'Chọn ngôn ngữ', change: 'Đổi ngôn ngữ', close: 'Đóng menu ngôn ngữ' },
       analytics: { title: 'Giúp cải thiện ứng dụng namhnz', description: 'Cho phép phân tích ẩn danh để hiểu sản phẩm nào được quan tâm. Không gửi thông tin liên hệ cá nhân.', accept: 'Cho phép phân tích', decline: 'Từ chối', settings: 'Cài đặt Analytics' },
       productsData: {
+        ocr4ai: { teaser: "Chuyển hình ảnh thành văn bản cho AI", description: "OCR nhanh, chi phí thấp. Đầu vào cho AI không cần chính xác 100%—chỉ cần đủ rõ để AI hiểu nội dung.", label: "OCR cho AI" },
         instantTranslate: { teaser: 'Dịch tức thì trên toàn bộ Windows.', description: 'Ứng dụng chỉ dành cho Windows, giúp dịch nhanh nội dung đang gõ sang ngôn ngữ khác và hoạt động xuyên suốt với toàn bộ app trên Windows.', label: 'Tiện ích Windows' },
         documentWallet: { teaser: 'Giấy tờ cá nhân, offline 100%.', description: 'Ứng dụng quản lý giấy tờ cá nhân, lưu trữ offline 100% để dữ liệu của bạn luôn riêng tư.', label: 'Offline 100%' },
         semit: { teaser: 'Widget nhắc nhớ các cột mốc sắp tới.', description: 'Ghi nhớ các cột mốc sắp tới và tạo widget trên màn hình điện thoại để bạn luôn chú ý đến những mốc quan trọng.', label: 'Widget điện thoại' },
@@ -124,6 +126,7 @@ const resources = {
       language: { label: '语言', choose: '选择语言', change: '更改语言', close: '关闭语言菜单' },
       analytics: { title: '帮助改进 namhnz 应用', description: '允许匿名分析，以了解访客探索哪些产品。不会发送个人联系信息。', accept: '允许分析', decline: '拒绝', settings: '分析设置' },
       productsData: {
+        ocr4ai: { teaser: "将图片转换为供 AI 使用的文本", description: "快速、低成本的 OCR。AI 输入无需 100% 准确，只需足够清晰，让 AI 理解内容即可。", label: "AI 专用 OCR" },
         instantTranslate: { teaser: '在整个 Windows 中即时翻译。', description: '一款仅限 Windows 的应用，可将正在输入的内容快速翻译成另一种语言，并适用于所有 Windows 应用。', label: 'Windows 工具' },
         documentWallet: { teaser: '个人证件，100% 离线。', description: '管理个人证件的应用，所有数据 100% 离线存储，保护您的隐私。', label: '100% 离线' },
         semit: { teaser: '即将到来的重要日期提醒小组件。', description: '记录即将到来的重要日期，并在手机屏幕上显示小组件。', label: '手机小组件' },
@@ -150,6 +153,7 @@ const resources = {
       language: { label: '言語', choose: '言語を選択', change: '言語を変更', close: '言語メニューを閉じる' },
       analytics: { title: 'namhnz アプリの改善にご協力ください', description: '訪問者がどの製品を見ているかを匿名で分析することを許可します。個人の連絡先情報は送信されません。', accept: '分析を許可', decline: '拒否', settings: '分析設定' },
       productsData: {
+        ocr4ai: { teaser: "画像を AI 向けのテキストに変換", description: "高速・低コストの OCR。AI への入力は 100% 正確である必要はなく、AI が内容を理解できる程度に明確であれば十分です。", label: "AI 向け OCR" },
         instantTranslate: { teaser: 'Windows 全体で瞬時に翻訳。', description: '入力中の内容を別の言語へすばやく翻訳し、すべての Windows アプリで使える Windows 専用アプリです。', label: 'Windows ユーティリティ' },
         documentWallet: { teaser: '個人書類を 100% オフラインで。', description: '個人書類を管理するアプリです。すべてオフラインに保存され、プライバシーを守ります。', label: '100% オフライン' },
         semit: { teaser: '予定の節目を知らせるウィジェット。', description: '近づく節目を記録し、重要な日を見逃さないようスマホ画面にウィジェットを表示します。', label: 'スマホウィジェット' },
@@ -176,6 +180,7 @@ const resources = {
       language: { label: '언어', choose: '언어 선택', change: '언어 변경', close: '언어 메뉴 닫기' },
       analytics: { title: 'namhnz 앱 개선에 도움 주기', description: '방문자가 어떤 제품을 살펴보는지 익명 분석을 허용합니다. 개인 연락처 정보는 전송되지 않습니다.', accept: '분석 허용', decline: '거부' , settings: '분석 설정' },
       productsData: {
+        ocr4ai: { teaser: "이미지를 AI용 텍스트로 변환", description: "빠르고 저렴한 OCR. AI 입력은 100% 정확할 필요 없이 AI가 내용을 이해할 수 있을 만큼 명확하면 충분합니다.", label: "AI용 OCR" },
         instantTranslate: { teaser: 'Windows 전체에서 즉시 번역.', description: '입력 중인 내용을 다른 언어로 빠르게 번역하고 모든 Windows 앱에서 작동하는 Windows 전용 앱입니다.', label: 'Windows 유틸리티' },
         documentWallet: { teaser: '개인 문서를 100% 오프라인으로.', description: '개인 문서를 관리하는 앱으로 모든 데이터를 100% 오프라인에 저장해 개인정보를 보호합니다.', label: '100% 오프라인' },
         semit: { teaser: '다가오는 중요한 일을 알려 주는 위젯.', description: '다가오는 중요한 일정을 기억하고 휴대폰 화면 위젯으로 계속 확인할 수 있습니다.', label: '휴대폰 위젯' },
@@ -202,6 +207,7 @@ const resources = {
       language: { label: 'Idioma', choose: 'Elegir idioma', change: 'Cambiar idioma', close: 'Cerrar menú de idioma' },
       analytics: { title: 'Ayuda a mejorar las aplicaciones de namhnz', description: 'Permite análisis anónimos para saber qué productos exploran los visitantes. No se envían datos personales de contacto.', accept: 'Permitir análisis', decline: 'Rechazar', settings: 'Configuración de análisis' },
       productsData: {
+        ocr4ai: { teaser: "Convierte imágenes en texto para IA", description: "OCR rápido y económico. La entrada para la IA no necesita ser 100% exacta, solo lo bastante clara para que la IA entienda el contenido.", label: "OCR para IA" },
         instantTranslate: { teaser: 'Traducción instantánea en todo Windows.', description: 'Una aplicación exclusiva para Windows que traduce rápidamente lo que escribes a otro idioma en todas las aplicaciones de Windows.', label: 'Utilidad de Windows' },
         documentWallet: { teaser: 'Tus documentos personales, 100% sin conexión.', description: 'Una aplicación para gestionar documentos personales que guarda todo 100% sin conexión para proteger tu privacidad.', label: '100% sin conexión' },
         semit: { teaser: 'Widget para próximos hitos.', description: 'Recuerda próximos hitos y muestra un widget en el teléfono para mantener las fechas importantes a la vista.', label: 'Widget de teléfono' },
@@ -228,6 +234,7 @@ const resources = {
       language: { label: 'Langue', choose: 'Choisir la langue', change: 'Changer de langue', close: 'Fermer le menu de langue' },
       analytics: { title: 'Aidez à améliorer les applications namhnz', description: 'Autorisez des analyses anonymes pour comprendre quels produits les visiteurs explorent. Aucune coordonnée personnelle n’est envoyée.', accept: 'Autoriser les analyses', decline: 'Refuser', settings: 'Paramètres Analytics' },
       productsData: {
+        ocr4ai: { teaser: "Transformez des images en texte pour l’IA", description: "OCR rapide et économique. Les données fournies à l’IA n’ont pas besoin d’être exactes à 100 %, mais simplement assez claires pour que l’IA comprenne le contenu.", label: "OCR pour l’IA" },
         instantTranslate: { teaser: 'Traduction instantanée dans tout Windows.', description: 'Une application uniquement pour Windows qui traduit rapidement ce que vous tapez vers une autre langue dans toutes les applications Windows.', label: 'Utilitaire Windows' },
         documentWallet: { teaser: 'Vos documents personnels, 100 % hors ligne.', description: 'Une application de gestion de documents personnels qui stocke tout 100 % hors ligne pour préserver votre confidentialité.', label: '100 % hors ligne' },
         semit: { teaser: 'Un widget pour les prochaines échéances.', description: 'Mémorisez les prochaines échéances et affichez un widget sur votre téléphone pour garder les dates importantes en vue.', label: 'Widget téléphone' },
