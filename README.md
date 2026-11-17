@@ -4,6 +4,7 @@ Landing page cho he sinh thai ung dung cua `namhnz`.
 
 ## Noi dung
 
+- Dieu huong toi `https://debt-book-z.laychu.com/` — Debt Book Z: So ghi no ca nhan rieng tu, chinh xac
 - Dieu huong toi `https://ocr.laychu.com/` — Ocr4AI: Turn images into text for AI
 - Dieu huong toi `https://translate.laychu.com/`
 - Dieu huong toi `https://vigiayto.laychu.com/`
